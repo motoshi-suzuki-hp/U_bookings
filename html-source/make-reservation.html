@@ -7,24 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>My Nice Page</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/css/datepicker-bs4.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <style>
-        .my-footer {
-            height: 5em;
-            background-color: #163b65;
-            margin-top: 1.5em;
-            padding: 1em;
-            color: white;
-            font-size: 80%;
-        }
-
-        .room-image {
-            max-width: 50%;
-        }
-    </style>
 </head>
 
 <body>
@@ -72,7 +61,7 @@
         <div class="col">
             <h1>Make reservation</h1>
 
-            <form method="post" action="" class="needs-validation" novalidate>
+            <form method="post" action="" class="needs-validation" novalidate class="needs-validation">
               <div class="form-group mt-5">
                 <label for="first_name">First name:</label>
                 <input type="text" name="first_name" id="first_name" class="form-control" required autocomplete="off">
@@ -98,7 +87,19 @@
               <input type="submit" class="btn btn-primary" value="Make Reservation">
 
             </form>
+
+
+
         </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <p id="myParagraph">This is some text.</p>
+        <p>
+          <button id="colorButton" class="btn btn-outline-secondary">Click me</button>
+        </p>
+      </div>
     </div>
 
 
@@ -128,6 +129,44 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" 
     crossorigin="anonymous"></script>
+
+
+<script>
+  console.log("I am printing from javascript");
+
+  (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+
+  document.getElementById("colorButton").addEventListener("click", function(){
+      let myEl = document.getElementById("myParagraph");
+
+      if (myEl.classList.contains("redText")) {
+        myEl.classList.remove("redText");
+      }
+      else {
+        myEl.classList.add("redText");
+      }
+  })
+
+
+</script>
 
 
 </body>
