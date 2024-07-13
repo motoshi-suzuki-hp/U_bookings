@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/motoshi-suzuki-hp/bookings/pkg/config"
-	"github.com/motoshi-suzuki-hp/bookings/pkg/handlers"
-	"github.com/motoshi-suzuki-hp/bookings/pkg/render"
+	"github.com/motoshi-suzuki-hp/bookings/internal/config"
+	"github.com/motoshi-suzuki-hp/bookings/internal/handlers"
+	"github.com/motoshi-suzuki-hp/bookings/internal/render"
 )
 
 const portnumber = ":8080"
